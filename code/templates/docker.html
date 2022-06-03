@@ -1,0 +1,71 @@
+<html lang="es">
+    <head>
+            <title>Docker commit</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+        <form method="POST">
+            <center><h1>Docker commit</h1></center>
+            <div class="jumbotron text-center">
+                
+                <div class="container">
+                    <div class="container">
+
+                        <p>
+                            Docker nos ofrece la posibilidad de convertir un contenedor a una imagen a través del comando:
+                            docker commit -a “Autor” -m ”Mensaje” nombre_contenedor nombre_imagen_resultante
+                            docker commit nombre_contenedor nombre_imagen_resultante
+                        </p>
+                        <p>
+                            Ejemplo:
+                        </p>
+                        <p>
+                            1. Descargar imagen Ubuntu:latest
+                        </p>
+                        <p>
+                            docker pull ubuntu:latest
+                        </p>
+                        <p>
+                            2. Ejecutar imagen
+                        </p>
+                        <p>
+                            docker run -ti –name ubuntu ubuntu:latest
+                        </p>
+                        <p>
+                            Con docker commit crearemos una imagen nueva a partir de un contenedor.
+                        </p>
+                            
+                        <p>
+                            Por ejemplo:
+                        </p>
+                        <p>Creamos un contenedor con docker run -it --name debian_9 -h debian_9 debian bash/p>
+                        <p>Entramos en el bash y actualizamos con apt-get update luego instalamos apache apt-get install apache2</p>
+                        <p>Ahora tenemos un debian_9 con apache2.</p>
+                        <p>Levantamos apache desde el bash apache2ctl -D FOREGORUND</p>
+                        <p>Ahora nos interesa tener un contenedor que levante apache2 de forma automática y utilizarlo como servidor. Tenemos que ejecutar un docker commit esto creara una nueva imagen con los cambios relaizados.</p>
+                        <h3>docker commit debian_9 debian_9_apache</h3>
+
+
+
+                        <br>
+                    </div>
+                    
+                </div>
+                <div align="center"></div> 
+                    <img src="https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png" width="400px" height="400px">
+                    <br>
+                    <input  class="btn btn-danger" type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+                </div>
+                <br>
+                
+            </div>    
+        </form>
+    </body>
+</html>
+
